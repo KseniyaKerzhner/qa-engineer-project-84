@@ -4,7 +4,7 @@
   requirement: |
     При добавлении товара в корзину данный товар должен появиться в корзине
   prerequisites: |
-    открыт сайт https://hexlet-products-store.vercel.app/
+    no prerequisites
   test-data: |
     no test-data
   steps:
@@ -32,10 +32,39 @@
   requirement: |
     При нажатии кнопки Continue shopping из корзины происходит переход в каталог товаров
   prerequisites: |
-    Открыта корзина на сайте https://hexlet-products-store.vercel.app/
+    Открыта корзина
   test-data: |
     no test-data
   steps:
     - Нажимаем кнопку Continue shopping
   expected-result: |
     Происходит переход в каталог товаров
+
+- summary: |
+    Проверка сортировки товаров в каталоге
+  requirement: |
+    При сортировке товара происходит корректная фильтрация товаров
+  prerequisites: |
+    no prerequisites
+  test-data: |
+    no test-data
+  steps:
+    - В разделе Category выбираем smartphones
+    - В разделе Brand выбираем чек-бокс Apple
+    - Нажимаем чек-бокс In Stock
+  expected-result: |
+    В каталоке отображаются смартфоны бренда Apple
+
+- summary: |
+    Проверка мультиязычности сайта
+  requirement: |
+    При переключении языка сайта с английского на русский, сайт должен корректно отображаться
+  prerequisites: |
+    no prerequisites
+  test-data: |
+    no test-data
+  steps:
+    - Нажимаем кнопку Language
+    - Из выпадающего меню выбираем Russian
+  expected-result: |
+    Сайт должне поменять язык и все элементы корректно отображаются
