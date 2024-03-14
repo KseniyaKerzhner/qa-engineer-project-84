@@ -13,3 +13,29 @@
     - Нажимаем кнопку «Сart»
   expected-result: |
     Выбранный товар должен отобразится в корзине
+
+- summary: |
+    Проверка очистки корзины
+  requirement: |
+    При нажатии кнопки Clear cart товары должны удалится
+  prerequisites: |
+    В корзину должен быть добавлен товар
+  test-data: |
+    no test-data
+  steps:
+    - Нажимаем кнопку Clear cart
+  expected-result: |
+    Корзина пустая
+
+- summary: |
+    Успешный переход из корзины обратно в каталог
+  requirement: |
+    При нажатии кнопки Continue shopping из корзины происходит переход в каталог товаров
+  prerequisites: |
+    Открыта корзина на сайте https://hexlet-products-store.vercel.app/
+  test-data: |
+    no test-data
+  steps:
+    - Нажимаем кнопку Continue shopping
+  expected-result: |
+    Происходит переход в каталог товаров
