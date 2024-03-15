@@ -14,7 +14,7 @@ test-cases:
 
   - summary: |
       Проверка возможности оформления заказа
-    status: pass
+    status: fail
 
   - summary: |
       Проверка возможности просмотра информации о товаре
@@ -26,7 +26,7 @@ test-cases:
 
   - summary: |
       Проверка сортировки товаров с помощью строки поиска
-    status: fail
+    status: pass
 
   - summary: |
       Проверка ошибочных запросов
@@ -41,6 +41,31 @@ test-cases:
     status: pass
 
 bugreports:
+  - summary: |
+      Ошибка оформления заказа
+    environment: |
+      Chrome Версия 122.0.6261.128 (Официальная сборка) (64 бит)
+    steps-to-reproduce: |
+       1. Выбираем любой товар
+       2. Добавляем его в корзину
+       3. Переходим в корзину
+       4. Нажимаем кнопку "Checkout"
+    expected-result: |
+      Открывается модальное окно для авторизации и в DevTools отсутвуют ошибки передачи данных на сервер
+    actual-result: |
+      Ошибка в DevTools "500 Internal Server Error"
+
+  - summary: |
+      Не работает проверка ошибочных запросов
+    environment: |
+      Chrome Версия 122.0.6261.128 (Официальная сборка) (64 бит)
+    steps-to-reproduce: |
+       1. В строку поиска ввести название одного из не существующих товаров, например - "Google"
+    expected-result: |
+      В блоке каталога появляется сообщение "Nothing found!"
+    actual-result: |
+      Сообщение не появляется
+      
   - summary: |
       Кнопка "Log in to comment" не работает в мобильно версии сайта
     environment: |
