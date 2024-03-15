@@ -1,0 +1,56 @@
+---
+test-cases:
+  - summary: |
+      Проверка возможности добавления товара в корзину
+    status: pass
+
+  - summary: |
+      Проверка очистки корзины
+    status: pass
+
+  - summary: |
+      Успешный переход из корзины обратно в каталог
+    status: pass
+
+  - summary: |
+      Проверка возможности оформления заказа
+    status: pass
+
+  - summary: |
+      Проверка возможности просмотра информации о товаре
+    status: pass
+
+  - summary: |
+      Проверка сортировки товаров в каталоге
+    status: pass
+
+  - summary: |
+      Проверка сортировки товаров с помощью строки поиска
+    status: fail
+
+  - summary: |
+      Проверка ошибочных запросов
+    status: fail
+
+  - summary: |
+      Проверка мультиязычности сайта
+    status: pass
+
+  - summary: |
+      Проверка адаптивности
+    status: pass
+
+bugreports:
+  - summary: |
+      Кнопка "Log in to comment" не работает в мобильно версии сайта
+    environment: |
+      Chrome Версия 122.0.6261.128 (Официальная сборка) (64 бит)
+    steps-to-reproduce: |
+       1. Oткрываем DevTools
+       2. Нажимаем кнопку Toggle device toolbar
+       3. Выбираем разрешение 412x915
+       4. Нажимаем кнопку "Log in to comment"
+    expected-result: |
+      Открывается модальное окно для авторизации
+    actual-result: |
+      Кнопка не активна
