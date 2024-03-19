@@ -45,7 +45,7 @@
 
 - summary: |
     Проверка смены языка на русский
-  status: pass
+  status: fail
 
 - summary: |
     Проверка мобильной версии
